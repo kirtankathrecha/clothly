@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLOTHLY</title>
+<meta name="description" content="CLOTHLY. Clothes, without the noise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#000; --fg:#fff; --mute:#8a8a8a; --line:#242424; --panel:#0e0e0e;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:'Archivo',Helvetica,Arial,sans-serif;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  header{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+  .logo{font-weight:800;letter-spacing:.18em;font-size:1rem}
+  nav{display:flex;gap:28px;font-size:.95rem;color:var(--mute)}
+  nav a:hover{color:var(--fg)}
+
+  .hero{padding:12vh 0 14vh}
+  .hero h1{
+    font-size:clamp(3.4rem,15vw,12rem);
+    font-stretch:125%;font-weight:800;line-height:.9;letter-spacing:-.03em;
+  }
+  .hero p{margin-top:32px;max-width:34ch;font-size:1.25rem;color:var(--mute)}
+  .btn{display:inline-block;margin-top:36px;padding:16px 34px;background:var(--fg);color:var(--bg);font-weight:600;border:1px solid var(--fg);transition:background .2s,color .2s}
+  .btn:hover{background:var(--bg);color:var(--fg)}
+
+  section{padding:80px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-.02em;margin-bottom:40px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .item{display:block}
+  .shot{aspect-ratio:3/4;background:var(--panel);display:grid;place-items:center;transition:background .25s}
+  .item:hover .shot{background:#1a1a1a}
+  .shot svg{width:46%;fill:none;stroke:var(--fg);stroke-width:1.5;stroke-linejoin:round}
+  .meta{display:flex;justify-content:space-between;margin-top:14px;font-weight:500}
+  .meta span:last-child{color:var(--mute)}
+
+  .about{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px}
+  .about p{color:var(--mute);max-width:40ch}
+  .about strong{display:block;color:var(--fg);font-size:1.15rem;margin-bottom:8px}
+
+  form{display:flex;gap:0;flex-wrap:wrap;max-width:520px}
+  input{flex:1 1 220px;padding:16px;background:var(--bg);color:var(--fg);border:1px solid var(--fg);border-right:0;font:inherit}
+  button{padding:16px 28px;background:var(--fg);color:var(--bg);border:1px solid var(--fg);font:inherit;font-weight:600;cursor:pointer}
+  #thanks{margin-top:16px;color:var(--mute);min-height:1.5em}
+
+  footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mute);font-size:.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  @media (max-width:560px){nav{gap:16px}input{border-right:1px solid var(--fg)}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#top">CLOTHLY</a>
+    <nav><a href="#shop">Shop</a><a href="#about">About</a><a href="#join">Join</a></nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>CLOTHLY</h1>
+      <p>Black, white, nothing extra. Clothes that do the talking quietly.</p>
+      <a class="btn" href="#shop">Shop the collection</a>
+    </div>
+
+    <section id="shop">
+      <h2>The essentials</h2>
+      <div class="grid">
+        <a class="item" href="#join">
+          <div class="shot"><svg viewBox="0 0 100 100"><path d="M30 14 14 30l10 12 8-6v50h36V36l8 6 10-12L70 14c-4 8-12 10-20 10s-16-2-20-10z"/></svg></div>
+          <div class="meta"><span>Core tee</span><span>€35</span></div>
+        </a>
+        <a class="item" href="#join">
+          <div class="shot"><svg viewBox="0 0 100 100"><path d="M34 12 8 34l10 14 10-7v47h44V41l10 7 10-14L66 12c0 8-7 14-16 14s-16-6-16-14z"/><path d="M50 26v20"/></svg></div>
+          <div class="meta"><span>Heavy hoodie</span><span>€85</span></div>
+        </a>
+        <a class="item" href="#join">
+          <div class="shot"><svg viewBox="0 0 100 100"><path d="M30 10h40l6 82H54L50 38l-4 54H24z"/><path d="M30 10l-2 14h44l-2-14"/></svg></div>
+          <div class="meta"><span>Straight trousers</span><span>€70</span></div>
+        </a>
+        <a class="item" href="#join">
+          <div class="shot"><svg viewBox="0 0 100 100"><path d="M26 22 10 40l10 12 8-6v44h44V46l8 6 10-12-16-18-24 10z"/><path d="M50 32v58"/></svg></div>
+          <div class="meta"><span>Daily jacket</span><span>€120</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>Less, but better</h2>
+      <div class="about">
+        <p><strong>One palette</strong>Everything goes with everything. Getting dressed takes under a minute.</p>
+        <p><strong>Heavy fabrics</strong>Organic cotton, cut to last years rather than weeks.</p>
+        <p><strong>Small drops</strong>We make a few pieces at a time. When they sell out, they sell out.</p>
+      </div>
+    </section>
+
+    <section id="join">
+      <h2>Hear about the next drop</h2>
+      <form id="f">
+        <input type="email" id="email" placeholder="Your email" aria-label="Email address" required>
+        <button type="submit">Notify me</button>
+      </form>
+      <p id="thanks" role="status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 CLOTHLY</span>
+    <span>Made in a very quiet studio.</span>
+  </footer>
+</div>
+<script>
+  document.getElementById('f').addEventListener('submit',function(e){
+    e.preventDefault();
+    document.getElementById('thanks').textContent='You’re on the list. We’ll keep it short.';
+    this.reset();
+  });
+</script>
+</body>
+</html>
