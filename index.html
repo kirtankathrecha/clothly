@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
 <title>CLOTHLY</title>
 <meta name="description" content="CLOTHLY. Clothes, without the noise.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,8 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#000; --fg:#fff; --mute:#8a8a8a; --line:#242424; --panel:#0e0e0e;
-    color-scheme:dark;
+    --bg:#efe4cf;      /* beige: page background */
+    --fg:#1b2f6e;      /* blue: text and shapes */
+    --mute:#4d5f94;    /* softer blue: secondary text */
+    --line:#d6c7a6;    /* darker beige: dividers */
+    --accent:#e8672a;  /* orange: highlights */
+    color-scheme:only light;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -23,27 +28,29 @@
   header{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
   .logo{font-weight:800;letter-spacing:.18em;font-size:1rem}
   nav{display:flex;gap:28px;font-size:.95rem;color:var(--mute)}
-  nav a:hover{color:var(--fg)}
+  nav a:hover{color:var(--accent)}
 
   .hero{padding:12vh 0 14vh}
   .hero h1{
-    font-size:clamp(3.4rem,15vw,12rem);
+    font-size:clamp(3rem,13vw,11rem);
     font-stretch:125%;font-weight:800;line-height:.9;letter-spacing:-.03em;
+    background:var(--accent);color:var(--fg);padding:.12em .15em;
   }
   .hero p{margin-top:32px;max-width:34ch;font-size:1.25rem;color:var(--mute)}
-  .btn{display:inline-block;margin-top:36px;padding:16px 34px;background:var(--fg);color:var(--bg);font-weight:600;border:1px solid var(--fg);transition:background .2s,color .2s}
-  .btn:hover{background:var(--bg);color:var(--fg)}
+  .btn{display:inline-block;margin-top:36px;padding:16px 34px;background:var(--fg);color:var(--bg);font-weight:600;border:1px solid var(--fg);transition:background .2s,color .2s,border-color .2s}
+  .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--fg)}
 
   section{padding:80px 0;border-top:1px solid var(--line)}
   h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-.02em;margin-bottom:40px}
 
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
   .item{display:block}
-  .shot{aspect-ratio:3/4;background:var(--panel);display:grid;place-items:center;transition:background .25s}
-  .item:hover .shot{background:#1a1a1a}
-  .shot svg{width:46%;fill:none;stroke:var(--fg);stroke-width:1.5;stroke-linejoin:round}
+  .shot{aspect-ratio:3/4;background:var(--fg);display:grid;place-items:center;transition:background .25s}
+  .item:hover .shot{background:var(--accent)}
+  .shot svg{width:46%;fill:none;stroke:var(--bg);stroke-width:1.5;stroke-linejoin:round;transition:stroke .25s}
+  .item:hover .shot svg{stroke:var(--fg)}
   .meta{display:flex;justify-content:space-between;margin-top:14px;font-weight:500}
-  .meta span:last-child{color:var(--mute)}
+  .meta span:last-child{color:var(--accent);font-weight:700}
 
   .about{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px}
   .about p{color:var(--mute);max-width:40ch}
@@ -51,7 +58,9 @@
 
   form{display:flex;gap:0;flex-wrap:wrap;max-width:520px}
   input{flex:1 1 220px;padding:16px;background:var(--bg);color:var(--fg);border:1px solid var(--fg);border-right:0;font:inherit}
-  button{padding:16px 28px;background:var(--fg);color:var(--bg);border:1px solid var(--fg);font:inherit;font-weight:600;cursor:pointer}
+  input::placeholder{color:var(--mute)}
+  button{padding:16px 28px;background:var(--fg);color:var(--bg);border:1px solid var(--fg);font:inherit;font-weight:600;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  button:hover{background:var(--accent);border-color:var(--accent);color:var(--fg)}
   #thanks{margin-top:16px;color:var(--mute);min-height:1.5em}
 
   footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mute);font-size:.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
@@ -69,7 +78,7 @@
   <main id="top">
     <div class="hero">
       <h1>CLOTHLY</h1>
-      <p>Black, white, nothing extra. Clothes that do the talking quietly.</p>
+      <p>Any Colour that you like</p>
       <a class="btn" href="#shop">Shop the collection</a>
     </div>
 
@@ -116,7 +125,7 @@
 
   <footer>
     <span>© 2026 CLOTHLY</span>
-    <span>Made in a very quiet studio.</span>
+    <span>Made in a cosy room</span>
   </footer>
 </div>
 <script>
